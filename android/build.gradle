@@ -1,14 +1,15 @@
-group 'plugin.com.weijietech.flutter.flutterqiniu'
+group 'com.weijietech.flutter.qiniu'
 version '1.0-SNAPSHOT'
 
 buildscript {
+    ext.kotlin_version = '1.4.10'
     repositories {
         google()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.5.4'
     }
 }
 
@@ -20,9 +21,14 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 
     defaultConfig {
         minSdkVersion 16
@@ -34,5 +40,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.qiniu:qiniu-android-sdk:7.5.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.qiniu:qiniu-android-sdk:8.0.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

@@ -17,7 +17,7 @@ dependencies:
 # The following section is specific to Flutter.
 flutter:
   plugin:
-    androidPackage: plugin.com.weijietech.flutter
+    androidPackage: com.weijietech.flutter.qiniu
     pluginClass: FlutterQiniuPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
