@@ -35,7 +35,7 @@ internal class MethodCallHandlerImpl(var context: Context) : MethodCallHandler, 
         val filepath = call.argument<String>("filepath")
         val key = call.argument<String>("key")
         val token = call.argument<String>("token")
-        Log.e(TAG, filepath)
+//        Log.e(TAG, filepath)
         val config = Configuration.Builder()
                 .chunkSize(512 * 1024) // 分片上传时，每片的大小。 默认256K
                 .connectTimeout(10) // 链接超时。默认10秒
