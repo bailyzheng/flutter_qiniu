@@ -10,9 +10,9 @@ class FlutterQiniu {
   static const EventChannel _eventChannel =
       const EventChannel('flutter_qiniu_event');
 
-  Stream _onChanged;
+  Stream? _onChanged;
 
-  Stream onChanged() {
+  Stream? onChanged() {
     if (_onChanged == null) {
       _onChanged = _eventChannel.receiveBroadcastStream();
     }
@@ -22,7 +22,7 @@ class FlutterQiniu {
   ///上传
   ///
   /// key 保存到七牛的文件名
-  Future<String> upload(String filepath, String token, String key) async {
+  Future<String?> upload(String filepath, String token, String key) async {
     var res = await _channel.invokeMethod('upload',
         <String, String>{"filepath": filepath, "token": token, "key": key});
     return res;
